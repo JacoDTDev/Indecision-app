@@ -1,6 +1,10 @@
 'use strict';
 
-var name = 'Jaco';
+//object
+var user = {
+    name: 'Jaco',
+    age: 26
+};
 var jsx = React.createElement(
     'div',
     null,
@@ -12,7 +16,7 @@ var jsx = React.createElement(
     React.createElement(
         'p',
         null,
-        name.toUpperCase() + '!',
+        user.name.toUpperCase() + '!',
         ' !'
     ),
     React.createElement(
@@ -21,12 +25,14 @@ var jsx = React.createElement(
         React.createElement(
             'li',
             null,
-            'Item1'
+            'name: ',
+            user.name
         ),
         React.createElement(
             'li',
             null,
-            'Item2'
+            'age: ',
+            user.age
         )
     )
 );

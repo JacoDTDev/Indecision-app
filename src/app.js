@@ -1,10 +1,14 @@
-const name = 'Jaco';
+//object
+const user = {
+  name: 'Jaco',
+  age: 26
+};
 const jsx = <div>
     <h1>IndecisionApp</h1>
-    <p>{name.toUpperCase()+'!'} !</p>
+    <p>{user.name.toUpperCase()+'!'} !</p>
     <ol>
-        <li>Item1</li>
-        <li>Item2</li>
+        <li>name: {user.name}</li>
+        <li>age: {user.age}</li>
     </ol>
 </div>;
 
