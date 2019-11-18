@@ -1,23 +1,38 @@
 'use strict';
 
 //object
-var user = {
-    name: 'Jaco',
-    age: 26
-};
-var jsx = React.createElement(
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Place you live in the hands of a computer.',
+    options: ['one', 'two']
+}; //end of app
+
+//function
+function getSubtitle(value) {
+    if (value) {
+        return value;
+    } else {
+        return undefined;
+    }
+} //end of function
+
+var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'IndecisionApp'
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        app.subtitle
     ),
     React.createElement(
         'p',
         null,
-        user.name.toUpperCase() + '!',
-        ' !'
+        app.options.length > 0 ? 'Here are your options' : 'No options'
     ),
     React.createElement(
         'ol',
@@ -25,16 +40,14 @@ var jsx = React.createElement(
         React.createElement(
             'li',
             null,
-            'name: ',
-            user.name
+            app.options[0]
         ),
         React.createElement(
             'li',
             null,
-            'age: ',
-            user.age
+            app.options[1]
         )
     )
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(template, document.getElementById('app'));
