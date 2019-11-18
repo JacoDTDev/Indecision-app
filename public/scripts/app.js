@@ -14,6 +14,20 @@ var jsx = React.createElement(
         null,
         name.toUpperCase() + '!',
         ' !'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Item1'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Item2'
+        )
     )
 );
 
