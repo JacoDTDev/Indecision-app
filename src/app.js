@@ -24,6 +24,15 @@ const onFormSub = (e) => {
     }
     renderApp();
 };
+const onRemoveAll = ()=>{
+    app.options = [];
+    renderApp();
+};
+const onMakeDecision = () =>{
+    const randomNumber = Math.floor(Math.random()*app.options.length);
+    const option = app.options[randomNumber];
+    alert(option);
+};
 
 const renderApp = ()=>{
     const template = <div>
@@ -31,6 +40,8 @@ const renderApp = ()=>{
         {app.subtitle && <p>{app.subtitle}</p>}
         <p>{app.options.length>0 ? 'Here are your options':'No options'}</p>
         <p>{app.options.length}</p>
+        <button onClick={onMakeDecision}>What should I do?</button>
+        <button onClick={onRemoveAll}>Remove All</button>
         <ol>
             {app.options.map((option)=>{
                 return <li key={option}>{option}</li>

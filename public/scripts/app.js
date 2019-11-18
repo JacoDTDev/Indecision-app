@@ -26,6 +26,15 @@ var onFormSub = function onFormSub(e) {
     }
     renderApp();
 };
+var onRemoveAll = function onRemoveAll() {
+    app.options = [];
+    renderApp();
+};
+var onMakeDecision = function onMakeDecision() {
+    var randomNumber = Math.floor(Math.random() * app.options.length);
+    var option = app.options[randomNumber];
+    alert(option);
+};
 
 var renderApp = function renderApp() {
     var template = React.createElement(
@@ -50,6 +59,16 @@ var renderApp = function renderApp() {
             'p',
             null,
             app.options.length
+        ),
+        React.createElement(
+            'button',
+            { onClick: onMakeDecision },
+            'What should I do?'
+        ),
+        React.createElement(
+            'button',
+            { onClick: onRemoveAll },
+            'Remove All'
         ),
         React.createElement(
             'ol',
