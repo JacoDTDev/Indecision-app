@@ -40,7 +40,7 @@ const renderApp = ()=>{
         {app.subtitle && <p>{app.subtitle}</p>}
         <p>{app.options.length>0 ? 'Here are your options':'No options'}</p>
         <p>{app.options.length}</p>
-        <button onClick={onMakeDecision}>What should I do?</button>
+        <button disabled={app.options.length===0} onClick={onMakeDecision}>What should I do?</button>
         <button onClick={onRemoveAll}>Remove All</button>
         <ol>
             {app.options.map((option)=>{
