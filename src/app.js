@@ -26,12 +26,7 @@ class IndecisionApp extends React.Component {
         } else if (this.state.options.indexOf(option) > -1) {
             return 'This option already exists';
         }
-
-        this.setState((prevState) => {
-            return {
-                options: prevState.options.concat(option)
-            };
-        });
+        this.setState((prevState) => ({ options: prevState.options.concat(option)}));
     }
     render() {
         const title = 'Indecision';
@@ -55,6 +50,7 @@ class IndecisionApp extends React.Component {
         );
     }
 }
+
 const Header =(props)=>{
     return (
         <div>
@@ -111,9 +107,7 @@ class AddOption extends React.Component {
         const error = this.props.handleAddOption(option);
         e.target.elements.option.value=''; //to clear the input
 
-        this.setState(() => {
-            return { error };
-        });
+        this.setState(() => ({ error }));
     }
     render() {
         return (
